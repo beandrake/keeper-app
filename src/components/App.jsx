@@ -8,7 +8,14 @@ function App() {
 	return (
 		<div>
 			<Header />
-			<Note />
+			<Note 
+				title="Deep Thoughts"
+				content="Baby shark doo doo doot-doot-doot"
+			/>
+			<Note 
+				title="Idea for Film"
+				content="A young boy meets a girl and it's a coming of age story"
+			/>
 			<Footer />
 		</div>
 	);
