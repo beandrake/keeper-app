@@ -2,20 +2,24 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Note from './Note';
-<Note></Note>
+import noteList from '../notes';
+
+function createNote(note) {
+	return (
+		<Note 
+			key={note.id}
+			title={note.title}
+			content={note.content}
+		/>
+	);
+}
+
 
 function App() {
 	return (
 		<div>
 			<Header />
-			<Note 
-				title="Deep Thoughts"
-				content="Baby shark doo doo doot-doot-doot"
-			/>
-			<Note 
-				title="Idea for Film"
-				content="A young boy meets a girl and it's a coming of age story"
-			/>
+			{noteList.map(createNote)}
 			<Footer />
 		</div>
 	);
