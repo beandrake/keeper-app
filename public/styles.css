@@ -11,6 +11,7 @@ body {
   padding: 0 16px;
 }
 
+
 header {
   background-color: #f5ba13;
   margin: auto -16px;
@@ -19,10 +20,29 @@ header {
 }
 
 header h1 {
+  display: inline-block;
   color: #fff;
   font-family: "McLaren", cursive;
   font-weight: 200;
 }
+
+/* button tray */
+header div {
+	float: right;
+}
+
+header button {
+  display: inline-block;
+  background-color: #1cb5ba;
+  border: 0;
+  width: 35px;
+  margin: 2px;
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+  font-size: 30px;
+}
+
 
 footer {
   position: absolute;
@@ -54,3 +74,4 @@ footer p {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
