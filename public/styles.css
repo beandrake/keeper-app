@@ -58,7 +58,37 @@ footer p {
 
 
 .noteInput {
-  padding:10px;
+  position: relative;
+  border-radius: 7px; 
+  background: #fff; 
+  padding:15px; 
+  width: 480px;
+  margin: 30px auto 20px auto;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);  
+}
+.noteInput input,
+.noteInput textarea {
+	border: none;
+	outline: none;
+	resize: none;
+	width: 100%;
+	padding: 4px;	
+	font-size: 1.2em;
+	/*font-family: inherit;*/
+}
+.noteInput button {
+	position: absolute;
+	right: 18px;
+	bottom: -18px;
+	border: none;
+	outline: none;
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	background: #f5ba13;
+	color: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
 }
 
 
