@@ -2,6 +2,8 @@ import React from 'react';
 
 function NoteInput(props) {
 
+	const formID = "addNoteInputForm";
+
 	const titlePlaceholder = "Title";
 	const contentPlaceholder = "Content";
 
@@ -16,6 +18,9 @@ function NoteInput(props) {
 		const content = contentRef.current.value;
 
 		props.addNote(title, content);
+		
+		// clear inputs
+		document.getElementById(formID).reset();
 	}
 
 	function preventDefaultReload(event){
@@ -25,7 +30,7 @@ function NoteInput(props) {
 	}
 
 	return (
-		<form className="noteInput" onSubmit={preventDefaultReload}>
+		<form id={formID} className="noteInput" onSubmit={preventDefaultReload}>
 			<input
 				className="title"
 				type="text"
