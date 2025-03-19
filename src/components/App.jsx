@@ -33,14 +33,41 @@ function App() {
 		);	
 	}
 
+	function swapNotes(index1, index2) {
+		// for readability, let's adjust the names
+		const first=index1;
+		const second=index2;
+
+		// make a temporary list that's safe to mutate
+		const tList = [...noteList];
+
+		// swap, then apply the state change
+		[ tList[first], tList[second] ] = [ tList[second], tList[first] ];			
+		setNoteList(tList);
+	}
+
+	function noteIsFirst(index) {
+		return index == 0;
+	}
+
+	function noteIsLast(index) {
+		return index == noteList.length-1;
+	}
+
 
 	// view-ish
-	function displayNote(note) {
+	function displayNote(note, index) {
 		return (
 			<Note 
 				key={note.id}
+				id={note.id}
+				index={index}
 				title={note.title}
 				content={note.content}
+				removeNote={removeNote}
+				swapNotes={swapNotes}
+				noteIsFirst={noteIsFirst}
+				noteIsLast={noteIsLast}
 			/>
 		);
 	}
