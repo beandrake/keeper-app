@@ -93,6 +93,7 @@ footer p {
 
 
 .note {
+  position: relative;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
@@ -100,8 +101,16 @@ footer p {
   margin: 16px;
   float: left;
 }
+.note.default {
+	background: #fff;
+}
+
+.note.hover {
+	background: #e6fdff;
+}
 .note h1 {
   font-size: 1.1em;
+  margin-top: 20px; 
   margin-bottom: 6px;
 }
 .note p {
@@ -110,11 +119,47 @@ footer p {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-
-.note.default {
-	background: #fff;
+.note button {
+	position: absolute;
+	top: 6px;
+	border: none;
+	outline: none;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+}
+.note .buttonTray {
+	position: absolute;
+	left: 50%;						/* centering, part 1 */
+	transform: translate(-50%); 	/* centering, part 2 */
+	top: 8px;
+	width: 100%;
+	height: 17px;
+	background: #cbffef;
+	color: #fff;
+}
+.note .left {
+	left: 5px;
+	border-radius: 50%;
+	width: 21px;
+	height: 21px;
+	background: #1cb5ba;
+	color: #fff;
+}
+.note .right {
+	right: 5px;
+	border-radius: 50%;
+	width: 21px;
+	height: 21px;
+	background: #1cb5ba;
+	color: #fff;
+}
+.note .delete {
+	left: 50%;						/* centering, part 1 */
+	transform: translate(-50%); 	/* centering, part 2 */
+	border-radius: 20%;
+	width: 21px;
+	height: 21px;
+	background: #ac1700;
+	color: #fff;
 }
 
-.note.hover {
-	background: #e6fdff;
-}

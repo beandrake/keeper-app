@@ -31,9 +31,10 @@ function Note(props) {
 		<div className={noteClasses} onMouseOver={setStateOver} onMouseOut={setStateOut}>
 			<h1>{props.title}</h1>
 			<p>{props.content}</p>
-			{ props.noteIsFirst(props.index) ? null : <button onMouseDown={moveLeft}>←</button> }
-			<button onMouseDown={removeNote}>DELETE</button>
-			{ props.noteIsLast(props.index) ? null : <button onMouseDown={moveRight}>→</button> }
+			<div className="buttonTray" />
+			{ props.noteIsFirst(props.index) ? null : <button onMouseDown={moveLeft} className="left">←</button> }
+			<button onMouseDown={removeNote} className="delete">X</button>
+			{ props.noteIsLast(props.index) ? null : <button onMouseDown={moveRight} className="right">→</button> }
 		</div>
 	);
 }
