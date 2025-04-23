@@ -1,27 +1,39 @@
 import React from 'react';
 
+const stateDefault = 'default';
+const stateHover = 'hover';
+
+
 function Note(props) {
 	
 	const [noteState, setNoteState] = React.useState('default');
 
 	function setStateOver() {
-		setNoteState('hover');
+		setNoteState(stateHover);
 	}
 
 	function setStateOut() {
-		setNoteState('default');
+		setNoteState(stateDefault);
 	}	
 
 	function removeNote() {
 		props.removeNote(props.id);		
 	}
 
+	function swapWith(otherIndex) {
+		// When the notes swap, this note will no longer be under the cursor...
+		// ...but since the cursor didn't move, onMouseOut won't be triggered.
+		// So remove the hover state before the swap.
+		setNoteState(stateDefault);		
+		props.swapNotes(props.index, otherIndex);
+	}
+
 	function moveLeft() {
-		props.swapNotes(props.index, props.index-1);
+		swapWith(props.index-1);
 	}
 
 	function moveRight() {
-		props.swapNotes(props.index, props.index+1);
+		swapWith(props.index+1);
 	}
 
 	
